@@ -1,5 +1,5 @@
-var Adoption = artifacts.require("Adoption");
+var RocketToken = artifacts.require("RocketToken");
 
 module.exports = function(deployer) {
-  deployer.deploy(Adoption);
+  deployer.deploy(RocketToken, 'RocketToken', 'RT');
 };
