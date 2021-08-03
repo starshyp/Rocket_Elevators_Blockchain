@@ -7,7 +7,10 @@ require('chai')
 contract('Quality', (accounts) => {
   describe('deployment', async() => {
     it('deploys successfully', async() => {
-      contract = await Color.deployed()
+      contract = await Quality.deployed()
+      const address = contract.address
+      console.log(address)
+      assert.notEqual(address, '')
     })
   })
 })
