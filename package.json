@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.2.0",
-    "openzeppelin-solidity": "^4.2.0"
+    "openzeppelin-solidity": "^4.2.0",
+    "truffle-flattener": "^1.5.0"
   }
 }
