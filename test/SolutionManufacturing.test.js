@@ -1,5 +1,3 @@
-const { assert } = require("chai");
-
 const SolutionManufacturing = artifacts.require("./SolutionManufacturing.sol");
 // var chai = require('chai');
 
@@ -77,24 +75,25 @@ contract('SolutionManufacturing ', (accounts) => {
     //     });
     // })
 
-    describe('minting', async () =>{
-        it ('creates door', async() =>{
-            const result = await contract.mintDoor('111')
-            const totalSupply = await contract.totalSupply()
-            assert.equal(totalSupply , 1 )
-            const event = result.logs[0].args
-            assert.equal(event.tokenId.toNumber(), 1, 'id is currect' )
-            console.log(result)
-        })
-    })
-
     // describe('minting', async () =>{
     //     it ('creates door', async() =>{
-    //         const result = await contract.mint(5, 1, 2, 6, 2)
-    //         // const totalSupply = await contract.totalSupply
-    //         // assert.equal(totalSupply, 1)
+    //         const result = await contract.mintDoor('111')
+    //         const totalSupply = await contract.totalSupply()
+    //         assert.equal(totalSupply , 1 )
+    //         const event = result.logs[0].args
+    //         assert.equal(event.tokenId.toNumber(), 1, 'id is currect' )
     //         console.log(result)
     //     })
     // })
+
+    describe('minting', async () =>{
+        it ('creates door', async() =>{
+            const result = await contract.mintDoor( 1, 2, 6, 2)
+            // const totalSupply = await contract.totalSupply
+            // assert.equal(totalSupply, 1)
+            // assert(mintDoor)
+            console.log(result)
+        })
+    })
 })  
 

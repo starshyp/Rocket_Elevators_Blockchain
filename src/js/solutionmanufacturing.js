@@ -75,15 +75,15 @@ App = {
             type: 'POST',
             headers: { 'content-type': 'application/json', "accept": "*/*", "Access-Control-Allow-Origin": "*" },
             data: data,
-            url: 'https://rest-api-ag.azurewebsites.net/api/contracts',
+            url: 'https://local:5004/api/blockchain',
             success: function (data) {
                 alert('YOUR CONTRACT HAVE BEEN CREATED');
             }
         });
   
-          console.log("Creating door...");
+          console.log("Creating door");
   
-          return solutionManufacturingInstance.addDoor($("#alumBars1").val(),$("#steelSheets1").val(),$("#springs1").val(),$("#rubberBands1").val(),$("#lightBulbs1").val(),$("#displays1").val(), {from: account})
+          return solutionManufacturingInstance.mintDoor($("#alumBars1").val(),$("#steelSheets1").val(),$("#springs1").val(),$("#sensors1").val(), {from: account})
         }).catch(function(err) {
           console.log(err.message);
         });
@@ -116,15 +116,15 @@ App = {
             type: 'POST',
             headers: { 'content-type': 'application/json', "accept": "*/*", "Access-Control-Allow-Origin": "*" },
             data: data,
-            url: 'https://rest-api-ag.azurewebsites.net/api/contracts',
+            url: 'https://local:5004/api/blockchain',
             success: function (data) {
                 alert('YOUR CONTRACT HAVE BEEN CREATED');
             }
-        });
+          });
   
           console.log("Creating controller...");
   
-          return solutionManufacturingInstance.addController($("#alumBars2").val(),$("#steelSheets2").val(),$("#springs2").val(),$("#rubberBands2").val(),$("#lightBulbs2").val(),$("#displays2").val(), {from: account})
+          return solutionManufacturingInstance.addController($("#alumBars2").val(),$("#steelSheets2").val(),$("#rubberBands2").val(),$("#displays2").val(), {from: account})
         }).catch(function(err) {
           console.log(err.message);
         });
@@ -157,7 +157,7 @@ App = {
             type: 'POST',
             headers: { 'content-type': 'application/json', "accept": "*/*", "Access-Control-Allow-Origin": "*" },
             data: data,
-            url: 'https://rest-api-ag.azurewebsites.net/api/contracts',
+            url: 'https://local:5004/api/blockchain',
             success: function (data) {
                 alert('YOUR CONTRACT HAVE BEEN CREATED');
             }
@@ -165,7 +165,7 @@ App = {
   
           console.log("Creating control panel...");
   
-          return solutionManufacturingInstance.addControlPanel($("#alumBars3").val(),$("#steelSheets3").val(),$("#springs3").val(),$("#rubberBands3").val(),$("#lightBulbs3").val(),$("#displays3").val(), {from: account})
+          return solutionManufacturingInstance.addControlPanel($("#alumBars3").val(),$("#steelSheets3").val(),$("#rubberBands3").val(),$("#displays3").val(), {from: account})
         }).catch(function(err) {
           console.log(err.message);
         });
@@ -198,13 +198,13 @@ App = {
             type: 'POST',
             headers: { 'content-type': 'application/json', "accept": "*/*", "Access-Control-Allow-Origin": "*" },
             data: data,
-            url: 'https://rest-api-ag.azurewebsites.net/api/contracts',
+            url: 'https://local:5004/api/blockchain',
             success: function (data) {
                 alert('YOUR CONTRACT HAVE BEEN CREATED');
             }
         });
   
-          return solutionManufacturingInstance.addCallSign($("#alumBars4").val(),$("#steelSheets4").val(),$("#springs4").val(),$("#rubberBands4").val(),$("#lightBulbs4").val(),$("#displays4").val(), {from: account})
+          return solutionManufacturingInstance.addCallSign($("#alumBars4").val(),$("#steelSheets4").val(),$("#rubberBands4").val(),$("#displays4").val(), {from: account})
         }).catch(function(err) {
           console.log(err.message);
         });
