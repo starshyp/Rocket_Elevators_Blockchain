@@ -6,15 +6,6 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 contract SolutionManufacturing is ERC721 {
     constructor() ERC721 ('SolutionManufacturing' , 'SM') {
     }
-    // Door[] public doors;
-    // Controller[] public controllers;
-    // ControlPanel[] public controlPanels;
-    // CallSign[] public callSigns;
-
-    // uint256 doorId = 1;
-    // uint256 controllerId = 1;
-    // uint256 controlPanelId = 1;
-    // uint256 callSignId = 1;
 
     struct Door {
         uint256 nbOfAluminumBars;
@@ -22,29 +13,26 @@ contract SolutionManufacturing is ERC721 {
         uint256 nbOfSprings;
         uint256 nbOfSensors;
     }
-    //  struct Controller {
-    //     uint256 id;
-    //     uint256 nbOfAluminumBars;
-    //     uint256 nbOfStainlessSheets;
-    //     uint256 nbOfBumpers;
-    //     uint256 nbOfLeds;
-    // }
+     struct Controller {
+        uint256 nbOfAluminumBars;
+        uint256 nbOfStainlessSheets;
+        uint256 nbOfBumpers;
+        uint256 nbOfLeds;
+    }
 
-    // struct ControlPanel {
-    //     uint256 id;
-    //     uint256 nbOfAluminumBars;
-    //     uint256 nbOfStainlessSheets;
-    //     uint256 nbOfBumpers;
-    //     uint256 nbOfLeds;
-    // }
+    struct ControlPanel {
+        uint256 nbOfAluminumBars;
+        uint256 nbOfStainlessSheets;
+        uint256 nbOfBumpers;
+        uint256 nbOfLeds;
+    }
 
-    // struct CallSign {
-    //     uint256 id;
-    //     uint256 nbOfAluminumBars;
-    //     uint256 nbOfStainlessSheets;
-    //     uint256 nbOfBumpers;
-    //     uint256 nbOfLeds;
-    // }
+    struct CallSign {
+        uint256 nbOfAluminumBars;
+        uint256 nbOfStainlessSheets;
+        uint256 nbOfBumpers;
+        uint256 nbOfLeds;
+    }
 
     // function addingDoors(
     //     uint256 id,
@@ -196,9 +184,16 @@ contract SolutionManufacturing is ERC721 {
     // }
 
     Door[] public solutionDoors;
-    mapping(uint => Door ) door;
+    Controller[] public solutionControllers;
+    ControlPanel[] public solutionControlPaneles;
+    CallSign[] public solutionCallSigns;
 
-    string[] public doors ;
+    mapping(uint => Door ) door;
+    mapping(uint => Controller ) controller;
+    mapping(uint => ControlPanel ) controlPanel;
+    mapping(uint => CallSign ) callSign;
+
+    // string[] public doors ;
     // mapping(string => bool) doorsExists;
 
     function mintDoor ( uint alumBars1, uint steelSheets1, uint springs1, uint sensors1) public {
@@ -208,12 +203,12 @@ contract SolutionManufacturing is ERC721 {
         // doorsExists[_door] = true;
         _mint(msg.sender, id);
 
-        uint256 varNbOfAluminumBars;
-        uint256 varNbOfStainlessSheets;
-        uint256 varNbOfSprings;
-        uint256 varNbOfSensors;
-        uint256 varNbOfBumpers;
-        uint256 varNbOfLeds;
+        // uint256 varNbOfAluminumBars;
+        // uint256 varNbOfStainlessSheets;
+        // uint256 varNbOfSprings;
+        // uint256 varNbOfSensors;
+        // uint256 varNbOfBumpers;
+        // uint256 varNbOfLeds;
 
         // for (uint256 i = 0; i < doors.length; i++) {
         // solutionDoors[id].nbOfAluminumBars = varNbOfAluminumBars;
@@ -223,7 +218,30 @@ contract SolutionManufacturing is ERC721 {
         // }
         solutionDoors.push(Door(door[id].nbOfAluminumBars,door[id].nbOfStainlessSheets,door[id].nbOfSprings,door[id].nbOfSensors));
         // doors.push(_door);
+    }
 
+    function mintController ( uint alumBars2, uint steelSheets2, uint rubberBands2, uint displays2) public {
+        uint id = solutionControllers.length;
+        id +=1 ;
+        _mint(msg.sender, id);
+
+        solutionControllers.push(Controller(controller[id].nbOfAluminumBars,controller[id].nbOfStainlessSheets,controller[id].nbOfBumpers,controller[id].nbOfLeds));
+    }
+
+    function mintControlPanel ( uint alumBars3, uint steelSheets3, uint rubberBands3, uint displays3) public {
+        uint id = solutionControlPaneles.length;
+        id +=1 ;
+        _mint(msg.sender, id);
+
+        solutionControlPaneles.push(ControlPanel(controlPanel[id].nbOfAluminumBars,controlPanel[id].nbOfStainlessSheets,controlPanel[id].nbOfBumpers,controlPanel[id].nbOfLeds));
+    }
+
+     function mintCallSign ( uint alumBars4, uint steelSheets4, uint rubberBands4, uint displays4) public {
+        uint id = solutionCallSigns.length;
+        id +=1 ;
+        _mint(msg.sender, id);
+
+        solutionCallSigns.push(CallSign(callSign[id].nbOfAluminumBars,callSign[id].nbOfStainlessSheets,callSign[id].nbOfBumpers,callSign[id].nbOfLeds));
     }
 
     function contractAddress() public view returns(address) {
