@@ -2,7 +2,7 @@
 
 ### What is new?
 
-ERC-721 based smart contracts to keep track of each step in the supply chain as well as a dedicated Rocket Elevators 'RT' token (ERC-20).
+ERC-721 based smart contracts to keep track of each step in the supply chain with the contract addresses posting to a DB, in addition a dedicated Rocket Elevators 'RT' token (ERC-20) was created with an initial supply of 1M.
 
 ### How to use
 
@@ -30,7 +30,8 @@ https://ropsten.etherscan.io
 
 ### Notes
 - Link to contract API endpoint: [Rocket Elevators Foundation - REST API](https://github.com/starshyp/Rocket-Elevators-Foundation-REST-API)
-- Token address was provided to Mathieu H. with 500K of 'RT' tokens sent to his account [Transaction](https://ropsten.etherscan.io/token/0x0fDeB300332f94C4e62d94EDDdB5950321Fa1b3b)
+- Token address was provided to Mathieu H. with 500K of 'RT' tokens sent to his account ([See transaction](https://ropsten.etherscan.io/token/0x0fDeB300332f94C4e62d94EDDdB5950321Fa1b3b))
+- Contract addresses are posted to a DB on Codeboxx's server for every form submission (ColbyB/contracts)
 
 ### previews:
 #### home page (project office)
@@ -47,6 +48,9 @@ https://ropsten.etherscan.io
 
 #### 'RT' tokens, proof of transfer
 ![](https://lh3.googleusercontent.com/pw/AM-JKLV7pgziCU-o4wLPWrOmkUyr4ONgS5gTPrk47Oaty9A2I2WY5w0Z0LVAtptOb7JEPLPmCO0eHgxe3kEGUE1Nb-PQdi3vlpQkB_PnvFQMjN5kIUnZeMh9N63dCiBuZ3Vb7pgp-Fkv1BKrMCPmMfvHWG6C=w2824-h1510-no)
+
+#### Posts to DB
+![](https://lh3.googleusercontent.com/pw/AM-JKLVTtuvTG22agsDEuHxV7O2B63SPMlCWKwnWEu88_Ot4Ia1opDasJBKhjViSVM3pJTwLyPAT-MeIcOt4Ws9ully0anUI6njBd3ndLU8sDtyAAfYS4UUj2-eGzV4btk-fDe3q-ogs9vzQ5n_5WrTL3JiG=w613-h69-no)
 
 ### Other Notes
 Team members: Maxim M., Soroush, Alex B., Colby B.
