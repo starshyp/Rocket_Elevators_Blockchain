@@ -1,6 +1,6 @@
 // ref: https://www.trufflesuite.com/guides/using-infura-custom-provider
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const fs = require('fs');
+// const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 // const mnemonic = "";
 

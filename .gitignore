@@ -122,3 +122,4 @@ dist
 .secret
 .vscode
 package-lock.json
+.idea

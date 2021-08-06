@@ -84,13 +84,15 @@ App = {
         
         App.contracts.ProjectOffice.deployed().then(function(instance) {
             projectOfficeInstance = instance;
+            console.log(projectOfficeInstance);
             var battery = $("#battery").val()
             var column = $("#column").val()
             var elevator = $("#elevator").val()
             var floor = $("#floor").val()
           // Execute adopt as a transaction by sending account
-            console.log(projectOfficeInstance)
+            console.log(projectOfficeInstance);
             address = projectOfficeInstance.address.toString();
+            console.log(address);
             var data = {
                 address: address,
                 contract: "ProjectOffice"
@@ -129,8 +131,8 @@ App = {
   
   };
   
-//   $(function() {
-//     $(window).load(function() {
-//       App.init();
-//     });
-//   });
+  $(function() {
+    $(window).load(function() {
+      App.initWeb3();
+    });
+  });

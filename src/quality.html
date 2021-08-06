@@ -48,8 +48,8 @@
                    <br/>
                    <select cols="40" id="door" required>
                      <option value="">Select Grade</option>
-                     <option value="true">Pass</option>
-                     <option value="false">Fail</option>
+                     <option value=true>Pass</option>
+                     <option value=false>Fail</option>
                    <!-- <input class="form-control" value="pass" id="door" readonly /> -->
                  </select>
                </div>
@@ -58,8 +58,8 @@
                    <br/>
                    <select id="cable" required>
                      <option value="">Select Grade</option>
-                     <option value="true">Pass</option>
-                     <option value="false">Fail</option>
+                     <option value=true>Pass</option>
+                     <option value=false>Fail</option>
                    <!-- <input class="form-control" id="cable" value="pass" readonly /> -->
                     </select>
                </div>
@@ -68,15 +68,15 @@
                    <br/>
                    <select id="brake" required>
                      <option value="">Select Grade</option>
-                     <option value="true">Pass</option>
-                     <option value="false">Fail</option>
+                     <option value=true>Pass</option>
+                     <option value=false>Fail</option>
                    <!-- <input class="form-control" id="brake" value="pass" readonly /> -->
                  </select>
                </div>
                <div class="row">
-                   <div class="col-md-4">
+                   <div class="col-md-2">
                    <label for="battery">Battery Permit</label>
-                   <input class="form-control" id="battery" type="text" required/>
+                   <input class="form-control" id="battery" type="number" required/>
                </div>
              </div>
              <br/>
@@ -88,6 +88,17 @@
                    <input class="form-control" id="cert3" type="text" readonly/>
                    <input class="form-control" id="cert4" type="text" readonly/>
                </div>
+             </div>
+             <br/>
+             <div class="form-group">
+                 <label for="grade">Overall Grade</label>
+                 <br/>
+                 <select cols="40" id="grade" required>
+                   <option value="">Select Grade</option>
+                   <option type="text" value="Pass">Pass</option>
+                   <option type="text" value="Fail">Fail</option>
+                 <!-- <input class="form-control" value="pass" id="door" readonly /> -->
+               </select>
              </div>
              <br/>
              <div class="row">
