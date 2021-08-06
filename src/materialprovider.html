@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Rocket Elevators</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+    input[type=number] {
+      padding: 10px;
+      margin:10px 0;
+      width:15%;
+      border: 5px solid rgb(14, 10, 236);
+      box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Rocket Elevators</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Project Office</a></li>
+            <li><a href="materialprovider.html">Material Provider</a></li>
+            <li><a href="solutionmanufacturing.html">Solution Manufacturing</a></li>
+            <li><a href="quality.html">Quality Control</a></li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+    </div>
+    <h2 style="text-align: center;">Material Provider Contract</h2><br>
+    <br>
+    <form class="placeNewOrder" style="text-align: center;">
+      <div class="row">
+          <label for="aluminiumBars" style="font-size: large;">Number aluminiumBars</label>
+          <br/>
+          <input id="aluminiumBars" type="number" placeholder="0" min="0" style="text-align: center;">
+      </div>
+
+      <div class="row">
+        <label for="stainlessSteelSheets" style="font-size: large;">Number of stainlessSteelSheets</label>
+        <br/>
+        <input id="stainlessSteelSheets" type="number" placeholder="0" min="0" style="text-align: center;">
+      </div>
+
+      <div class="row">
+        <label for="bumperRubberBands" style="font-size: large;">Number of bumperRubberBands</label>
+        <br/>
+        <input id="bumperRubberBands" type="number" placeholder="0" min="0" style="text-align: center;">
+      </div>
+
+      <div class="row">
+        <label for="interiorLightBulbs" style="font-size: large;">Number of interiorLightBulbs</label>
+        <br/>
+        <input id="interiorLightBulbs" type="number" placeholder="0" min="0" style="text-align: center;">
+      </div>
+
+      <div class="row">
+        <label for="displayLeds" style="font-size: large;">Number of displayLeds</label>
+        <br/>
+        <input id="displayLeds" type="number" placeholder="0" min="0" style="text-align: center;">
+      </div>
+
+      <div class="row">
+        <label for="speakers" style="font-size: large;">Number of speakers</label>
+        <br/>
+        <input id="speakers" type="number" placeholder="0" min="0" style="text-align: center;">
+      </div>
+
+    </div>
+    <br/>
+    <div class="row">
+          <div class="col-md-12">
+      <!-- <div class="text-left panel-body"> -->
+          <button type="submit" id="submit" class="btn btn-sm btn-primary" style="font-size: large;">Submit</button>
+      </div>
+    </div>
+  </form>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/materialprovider.js"></script>
+  </body>
+</html>
