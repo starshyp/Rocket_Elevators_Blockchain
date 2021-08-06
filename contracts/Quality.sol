@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
@@ -8,7 +9,7 @@ contract Quality is ERC721 {
   uint public qualityChk = 1;
   /* mapping(bool => Checks) public checks; */
 
-  constructor() ERC721("Quality", "QA") public {
+  constructor() ERC721("Quality", "QA") {
   }
 
   function verifyQuality(string memory _verify) public {
@@ -48,22 +49,22 @@ contract Quality is ERC721 {
     selfdestruct(0x0);
   } */
 
-  function door(bool doorTest) public returns(string memory) {
+  function door(bool doorTest) public pure returns(string memory) {
     /* _mint(msg.sender, qualityChk);
     _verificationExists[doorTest] = true;
     qualityChk += 1; */
     return doorTest ? 'Pass' : 'Fail';
   }
 
-  function cable(bool cableTest) public returns(string memory) {
+  function cable(bool cableTest) public pure returns(string memory) {
     return cableTest ? 'Pass' : 'Fail';
   }
 
-  function brake(bool brakeTest) public returns(string memory) {
+  function brake(bool brakeTest) public pure returns(string memory brake) {
     return brakeTest ? 'Pass' : 'Fail';
   }
 
-  function batteryPermit(uint numOfPermits) public returns(Permit memory batteryShow) {
+  function batteryPermit(uint numOfPermits) public /*public returns(Permit memory batteryShow)*/ {
     /* _mint(msg.sender, qualityChk);
     _verificationExists[numOfPermits] = true;
     qualityChk += 1;
@@ -77,13 +78,13 @@ contract Quality is ERC721 {
       batteryPermitNew.battChain = block.chainid;
       batteryPermitNew.battBlock = block.number;
       battPermit.push(batteryPermitNew);
-      return batteryPermitNew;
+      /* return batteryPermitNew; */
     }
   }
 
-  function certificate(bool door, bool brake, bool cable, uint Permit/*, Permit memory permit*/) public returns(string memory) {
+  function certificate(bool door, bool brake, bool cable, uint permit/*, Permit memory permit*/) public pure returns(string memory) {
     /* grade; */
-    return door && brake && cable && (Permit > 0) /*&& (permit > 0)*/ ? 'Pass' : 'Fail';
+    return door && brake && cable && (permit > 0) /*&& (permit > 0)*/ ? 'Pass' : 'Fail';
     /* return grade; */
   }
 
