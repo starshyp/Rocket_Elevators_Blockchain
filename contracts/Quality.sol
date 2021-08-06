@@ -49,27 +49,19 @@ contract Quality is ERC721 {
     selfdestruct(0x0);
   } */
 
-  function door(bool doorTest) public pure returns(string memory) {
-    /* _mint(msg.sender, qualityChk);
-    _verificationExists[doorTest] = true;
-    qualityChk += 1; */
+  function door(bool doorTest) public returns(string memory doorReturn) {
     return doorTest ? 'Pass' : 'Fail';
   }
 
-  function cable(bool cableTest) public pure returns(string memory) {
+  function cable(bool cableTest) public returns(string memory cableReturn) {
     return cableTest ? 'Pass' : 'Fail';
   }
 
-  function brake(bool brakeTest) public pure returns(string memory brake) {
+  function brake(bool brakeTest) public returns(string memory brakeReturn) {
     return brakeTest ? 'Pass' : 'Fail';
   }
 
   function batteryPermit(uint numOfPermits) public /*public returns(Permit memory batteryShow)*/ {
-    /* _mint(msg.sender, qualityChk);
-    _verificationExists[numOfPermits] = true;
-    qualityChk += 1;
-    uint id = qualityChk; */
-
     for(uint i=0; i<numOfPermits; i++) {
       Permit memory batteryPermitNew;
       batteryPermitNew.battID = random();
