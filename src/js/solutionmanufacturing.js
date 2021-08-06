@@ -75,7 +75,7 @@ App = {
             type: 'POST',
             headers: { 'content-type': 'application/json', "accept": "*/*", "Access-Control-Allow-Origin": "*" },
             data: data,
-            url: 'https://local:5004/api/blockchain',
+            url: ' https://rocketapis.azurewebsites.net/api/contract',
             success: function (data) {
                 alert('YOUR CONTRACT HAVE BEEN CREATED');
             }
@@ -116,7 +116,7 @@ App = {
             type: 'POST',
             headers: { 'content-type': 'application/json', "accept": "*/*", "Access-Control-Allow-Origin": "*" },
             data: data,
-            url: 'https://local:5004/api/blockchain',
+            url: ' https://rocketapis.azurewebsites.net/api/contract',
             success: function (data) {
                 alert('YOUR CONTRACT HAVE BEEN CREATED');
             }
@@ -124,7 +124,7 @@ App = {
   
           console.log("Creating controller...");
   
-          return solutionManufacturingInstance.addController($("#alumBars2").val(),$("#steelSheets2").val(),$("#rubberBands2").val(),$("#displays2").val(), {from: account})
+          return solutionManufacturingInstance.mintController($("#alumBars2").val(),$("#steelSheets2").val(),$("#rubberBands2").val(),$("#displays2").val(), {from: account})
         }).catch(function(err) {
           console.log(err.message);
         });
@@ -157,7 +157,7 @@ App = {
             type: 'POST',
             headers: { 'content-type': 'application/json', "accept": "*/*", "Access-Control-Allow-Origin": "*" },
             data: data,
-            url: 'https://local:5004/api/blockchain',
+            url: ' https://rocketapis.azurewebsites.net/api/contract',
             success: function (data) {
                 alert('YOUR CONTRACT HAVE BEEN CREATED');
             }
@@ -165,7 +165,7 @@ App = {
   
           console.log("Creating control panel...");
   
-          return solutionManufacturingInstance.addControlPanel($("#alumBars3").val(),$("#steelSheets3").val(),$("#rubberBands3").val(),$("#displays3").val(), {from: account})
+          return solutionManufacturingInstance.mintControlPanel($("#alumBars3").val(),$("#steelSheets3").val(),$("#rubberBands3").val(),$("#displays3").val(), {from: account})
         }).catch(function(err) {
           console.log(err.message);
         });
@@ -198,13 +198,13 @@ App = {
             type: 'POST',
             headers: { 'content-type': 'application/json', "accept": "*/*", "Access-Control-Allow-Origin": "*" },
             data: data,
-            url: 'https://local:5004/api/blockchain',
+            url: ' https://rocketapis.azurewebsites.net/api/contract',
             success: function (data) {
                 alert('YOUR CONTRACT HAVE BEEN CREATED');
             }
         });
   
-          return solutionManufacturingInstance.addCallSign($("#alumBars4").val(),$("#steelSheets4").val(),$("#rubberBands4").val(),$("#displays4").val(), {from: account})
+          return solutionManufacturingInstance.mintCallSign($("#alumBars4").val(),$("#steelSheets4").val(),$("#rubberBands4").val(),$("#displays4").val(), {from: account})
         }).catch(function(err) {
           console.log(err.message);
         });
