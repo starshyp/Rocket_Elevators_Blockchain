@@ -66,7 +66,7 @@ App = {
         
           var address = solutionManufacturingInstance.address.toString();
   
-          var datastring = {address: address, contract_type: "SolutionManufacturing - Doors"};
+          var datastring = {address: address, contract: "SolutionManufacturing - Doors"};
   
           var data = JSON.stringify(datastring);
           console.log(data);
@@ -107,7 +107,7 @@ App = {
         
           var address = solutionManufacturingInstance.address.toString();
   
-          var datastring = {address: address, contract_type: "SolutionManufacturint - Controllers"};
+          var datastring = {address: address, contract: "SolutionManufacturint - Controllers"};
   
           var data = JSON.stringify(datastring);
           console.log(data);
@@ -148,7 +148,7 @@ App = {
         
           var address = solutionManufacturingInstance.address.toString();
   
-          var datastring = {address: address, contract_type: "SolutionManufacturint - ControlPanel"};
+          var datastring = {address: address, contract: "SolutionManufacturint - ControlPanel"};
   
           var data = JSON.stringify(datastring);
           console.log(data);
@@ -189,7 +189,7 @@ App = {
         
           var address = solutionManufacturingInstance.address.toString();
   
-          var datastring = {address: address, contract_type: "SolutionManufacturint - Call Sign"};
+          var datastring = {address: address, contract: "SolutionManufacturint - Call Sign"};
   
           var data = JSON.stringify(datastring);
           console.log(data);
