@@ -1,10 +1,8 @@
 # Rocket Elevators Blockchain
 
-### Portal website: https://rocketportaladmin.azurewebsites.net
-
 ### What is new?
 
-Smart contracts to keep track of each step in the supply chain as well as a dedicated Rocket Elevators 'RT' token with the
+ERC-721 based smart contracts to keep track of each step in the supply chain as well as a dedicated Rocket Elevators 'RT' token (ERC-20).
 
 ### How to use
 
@@ -16,11 +14,11 @@ npm run dev
 
 ### Addresses
 https://ropsten.etherscan.io
-Token: 0x0fDeB300332f94C4e62d94EDDdB5950321Fa1b3b
-Project Office:
-Material Provider:
-Solution Manufacturing:
-Quality Control:
+- Token: 0x0fDeB300332f94C4e62d94EDDdB5950321Fa1b3b
+- Project Office:
+- Material Provider:
+- Solution Manufacturing:
+- Quality Control:
 
 ### Features
 - Rocket Elevators 'RT' tokens (1M supply)
@@ -32,7 +30,7 @@ Quality Control:
 
 ### Notes
 - Link to contract API endpoint: [Rocket Elevators Foundation - REST API](https://github.com/starshyp/Rocket-Elevators-Foundation-REST-API)
-- Token address was provided to Mathieu H. with 500K of 'RT' tokens sent to his account (https://ropsten.etherscan.io/token/0x0fDeB300332f94C4e62d94EDDdB5950321Fa1b3b)
+- Token address was provided to Mathieu H. with 500K of 'RT' tokens sent to his account [Transaction](https://ropsten.etherscan.io/token/0x0fDeB300332f94C4e62d94EDDdB5950321Fa1b3b)
 
 ### previews:
 #### home page (project office)
