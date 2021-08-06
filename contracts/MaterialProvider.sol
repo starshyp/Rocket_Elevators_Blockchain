@@ -1,23 +1,28 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.8.7;
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
+// contract MaterialProvider is ERC721 {
+//     constructor() ERC721("MaterialProvider", "MCO") {
+//     }
+// }
 
 contract MaterialProvider {
 
-    uint public alumiBars = 0;
-    uint public steelSheets = 0;
-    uint public rubberBands = 0;
-    uint public lightBulbs = 0;
-    uint public leds = 0;
-    uint public speakersProvider = 0;
+    uint256 public alumiBars = 0;
+    uint256 public steelSheets = 0;
+    uint256 public rubberBands = 0;
+    uint256 public lightBulbs = 0;
+    uint256 public leds = 0;
+    uint256 public speakersProvider = 0;
 
 struct Materials{
-        uint aluminiumBars;
-        uint stainlessSteelSheets;
-        uint bumperRubberBands;
-        uint interiorLightBulbs;
-        uint displayLeds;
-        uint speakers;
+        uint256 aluminiumBars;
+        uint256 stainlessSteelSheets;
+        uint256 bumperRubberBands;
+        uint256 interiorLightBulbs;
+        uint256 displayLeds;
+        uint256 speakers;
     }
 
     uint public materialListCount;
