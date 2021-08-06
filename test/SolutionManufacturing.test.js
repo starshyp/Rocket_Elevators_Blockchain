@@ -1,9 +1,4 @@
 const SolutionManufacturing = artifacts.require("./SolutionManufacturing.sol");
-// var chai = require('chai');
-
-// require('chai')
-//     .use(require('chai-as-promised'))
-//     .should()
 
 contract('SolutionManufacturing ', (accounts) => {
     let contract
