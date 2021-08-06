@@ -69,9 +69,8 @@ contract SolutionManufacturing is ERC721 {
     }
 
     function mintCallSign ( uint256 alumBars4, uint256 steelSheets4, uint256 rubberBands4, uint256 displays4) public {
-        uint id = solutionCallSigns.length;
         
-        forms[id] = msg.sender;
+        forms.push(msg.sender);
 
         solutionCallSigns.push(CallSign( alumBars4, steelSheets4, rubberBands4, displays4));
     }
