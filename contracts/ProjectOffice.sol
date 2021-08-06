@@ -22,22 +22,22 @@ contract ProjectOffice is ERC721 {
     string[] public orders;
     mapping(string => bool) _orderExists;
     uint public nbOrder = 1;
-    
+
     function placeNewOrder(string memory _order, uint batteries, uint columns, uint elevators, uint floors) public {
         _mint(msg.sender, nbOrder);
         _orderExists[_order] = true;
         nbOrder += 1;
-        
+
         uint totalNbColumns = columns * batteries;
         uint totalNbElevators = elevators * totalNbColumns;
         uint id = nbOrder;
-        
+
             components[id].amountOfShafts = totalNbElevators;
             components[id].amountOfControllers = batteries;
             components[id].amountOfDoors = totalNbElevators;
             components[id].amountOfButtons = floors * totalNbElevators;
             components[id].amountOfDisplays = totalNbElevators;
-        
+
         ordersComponents.push(Components(components[id].amountOfShafts, components[id].amountOfControllers, components[id].amountOfDoors, components[id].amountOfButtons, components[id].amountOfDisplays));
         orders.push(_order);
     }
