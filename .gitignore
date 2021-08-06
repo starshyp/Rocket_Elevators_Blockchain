@@ -41,7 +41,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-
+build/
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -118,3 +118,8 @@ dist
 .pnp.*
 
 .DS_Store
+/build
+.secret
+.vscode
+package-lock.json
+.idea

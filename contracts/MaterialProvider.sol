@@ -30,10 +30,10 @@ struct Materials{
     mapping(uint => Materials) public materials;
     Materials[] materialList;
 
-    function createMaterials(uint amountOfShafts, uint amountOfControllers, uint amountOfDoors, uint amountOfButtons, uint amountOfDisplays, uint amountOfSpeakers) 
+    function createMaterials(uint amountOfShafts, uint amountOfControllers, uint amountOfDoors, uint amountOfButtons, uint amountOfDisplays, uint amountOfSpeakers)
     public returns (uint,uint,uint,uint,uint,uint){
         Materials memory new_material;
-        
+
         new_material.aluminiumBars = amountOfShafts*4;
         new_material.stainlessSteelSheets = amountOfShafts*6 + amountOfDoors;
         new_material.bumperRubberBands = amountOfDoors*1;
