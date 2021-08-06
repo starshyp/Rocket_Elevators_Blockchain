@@ -32,11 +32,11 @@ contract('Quality', (accounts) => {
 
   describe('minting', async () => {
     it('creates a new token', async () => {
-      const result = await contract.verifyQuality('10122')
+      const result = await contract.verifyQuality('Pass', true, true, true, 4, true)
       // const totalSupply = await contract.totalSupply()
       //SUCCESS
       // assert.equal(totalSupply, 1)
-      console.log("Result: " + result)
+      console.log(result)
       const event = result.logs[0].args
       assert.equal(event.tokenId.toNumber(), 1, 'id is correct')
       assert.equal(event.from, '0x0000000000000000000000000000000000000000', 'from is correct')
@@ -50,10 +50,25 @@ contract('Quality', (accounts) => {
   describe('indexing', async () => {
     it('lists verifications', async () => {
       // mint 3 tokens
-      await contract.verifyQuality('10123')
-      await contract.verifyQuality('10124')
-      await contract.verifyQuality('10125')
+      await contract.verifyQuality('Pass', true, true, true, 4, true)
+      await contract.verifyQuality('Fail', true, true, false, 4, true)
+      await contract.verifyQuality('Fail', true, false, true, 4, true)
     })
+  })
+
+  describe('functions', async () =>{
+      it ('test pass', async() =>{
+          const door = await contract.door(true)
+          console.log(door)
+          const cable = await contract.cable(true)
+          console.log(cable)
+          const brake = await contract.brake(true)
+          console.log(brake)
+          const batteryPermit = await contract.batteryPermit(4)
+          console.log(batteryPermit)
+          const certificate = await contract.certificate(true, true, true, 4)
+          console.log(certificate)
+      })
   })
 
 })

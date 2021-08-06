@@ -117,10 +117,20 @@ App = {
         // Execute adopt as a transaction by sending account
         // return qualityInstance.adopt(petId, {from: account});
         return
-        qualityInstance.door($("#door").val(), {from: account});
-        qualityInstance.cable($("#cable").val(), {from: account});
-        qualityInstance.brake($("#brake").val(), {from: account});
-        qualityInstance.batteryPermit($("#battery").val(), {from: account});
+        // qualityInstance.verifyQuality('Pass', true, true, true, 4, true, {from: account});
+        qualityInstance.verifyQuality(
+          $("grade").val(),
+          $("door").val(),
+          $("cable").val(),
+          $("brake").val(),
+          $("battery").val(),
+          true, //true as in data exists
+          {from: account}
+        );
+        // qualityInstance.door($("#door").val(), {from: account});
+        // qualityInstance.cable($("#cable").val(), {from: account});
+        // qualityInstance.brake($("#brake").val(), {from: account});
+        // qualityInstance.batteryPermit($("#battery").val(), {from: account});
         qualityInstance.certificate(
           $("#cert1").val(),
           $("#cert2").val(),
