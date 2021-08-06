@@ -120,5 +120,5 @@ dist
 .DS_Store
 /build
 .secret
-
+.vscode
 package-lock.json
