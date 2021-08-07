@@ -49,7 +49,7 @@
       </div>
     </div>
     <h2 style="text-align: center;">Project Office Contract</h2><br>
-    <br>
+    <section>
     <form class="placeNewOrder" style="text-align: center;">
       <div class="row">
           <label for="batteries" style="font-size: large;">Number of Batteries</label>
@@ -80,7 +80,47 @@
       </div>
     </div>
   </form>
-
+  </section>
+  <br>
+  <h2 style="text-align: center;">Your Contract Informations</h2><br>
+  <section>
+  <div class="row" style="text-align: center;">
+    <label style="font-size: large;">ID of the Order to check</label>
+    <br/>
+    <input id="orderID" type="number" placeholder="0" min="0" style="text-align: center;">
+  </div>
+  <div class="row" style="text-align: center;" id="Sha">
+    <label style="font-size: large;">Total amount of Shafts needed</label>
+    <br/>
+    <input id="amountSha" type="number" readonly min="0" style="text-align: center;">
+  </div>
+  <div class="row" style="text-align: center;" id="Con">
+    <label style="font-size: large;">Total amount of Controllers needed</label>
+    <br/>
+    <input id="amountCon" type="number" readonly style="text-align: center;">
+  </div>
+  <div class="row" style="text-align: center;" id="Do">
+    <label style="font-size: large;">Total amount of Doors needed</label>
+    <br/>
+    <input id="amountDo" type="number" readonly style="text-align: center;">
+  </div>
+  <div class="row" style="text-align: center;" id="But">
+    <label style="font-size: large;">Total amount of Buttons needed</label>
+    <br/>
+    <input id="amountBut" type="number" readonly style="text-align: center;">
+  </div>
+  <div class="row" style="text-align: center;" id="Dis">
+    <label style="font-size: large;">Total amount of Displays needed</label>
+    <br/>
+    <input id="amountDis" type="number" readonly style="text-align: center;">
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-12" style="text-align: center;">
+<!-- <div class="text-left panel-body"> -->
+    <button type="submit" id="Get" class="btn btn-sm btn-danger" style="font-size: large;">Get Order</button>
+  </div>
+  </section>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

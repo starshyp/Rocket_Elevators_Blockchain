@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.8.7;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-contract ProjectOffice is ERC721 {
+import "@openzeppelin/contracts/access/Ownable.sol";
+contract ProjectOffice is Ownable, ERC721 {
 
     constructor() ERC721("Orders", "OD") {
     }
@@ -21,7 +22,7 @@ contract ProjectOffice is ERC721 {
     Components[] public ordersComponents;
     // string[] public orders;
     // mapping(string => bool) _orderExists;
-    uint public nbOrder = 1;
+    uint public nbOrder = 0;
 
     function placeNewOrder(uint batteries, uint columns, uint elevators, uint floors) public {
         _mint(msg.sender, nbOrder);
@@ -40,6 +41,15 @@ contract ProjectOffice is ERC721 {
 
         ordersComponents.push(Components(components[id].amountOfShafts, components[id].amountOfControllers, components[id].amountOfDoors, components[id].amountOfButtons, components[id].amountOfDisplays));
         // orders.push(_order);
+    }
+    function get(uint256 number) external onlyOwner view returns (uint256 amountOfShafts, uint256 amountOfControllers, uint256 amountOfDoors, uint256 amountOfButtons, uint256 amountOfDisplays) {
+        require(_exists(number), "token not minted");
+        Components memory allcomponents = ordersComponents[number];
+        amountOfShafts = allcomponents.amountOfShafts;
+        amountOfControllers = allcomponents.amountOfControllers;
+        amountOfDoors = allcomponents.amountOfDoors;
+        amountOfButtons = allcomponents.amountOfButtons;
+        amountOfDisplays = allcomponents.amountOfDisplays;
     }
 
     function contractAddress() public view returns(address) {
