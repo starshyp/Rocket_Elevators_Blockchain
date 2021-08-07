@@ -19,10 +19,10 @@ truffle migrate --network ropsten --reset --compile-none
 ### Contract Addresses
 https://ropsten.etherscan.io
 - Token: 0x0fDeB300332f94C4e62d94EDDdB5950321Fa1b3b
-- Project Office: 
-- Material Provider:
-- Solution Manufacturing:
-- Quality Control:
+- Project Office: 0x3a259952a41b226854AC9FDed4511387a1d0f258
+- Material Provider: 0xC5304574A3a3568E598f041Ad79A879e5cF141f8
+- Solution Manufacturing: 0xdAFB762FF41d2256B37B920419Cf0457d6843970
+- Quality Control: 0xb47Ba984475F7ea3bfAD75bA56ddecDEB192A450
 
 ### Features
 - Rocket Elevators 'RT' tokens (1M supply)
