@@ -13,7 +13,6 @@ npm run dev
 
 If necessary/issues:
 truffle migrate --reset
-truffle migrate --network ropsten --reset --compile-none
 ```
 
 ### Contract Addresses
