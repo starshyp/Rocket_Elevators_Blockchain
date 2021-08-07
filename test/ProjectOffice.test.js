@@ -17,13 +17,13 @@ contract('ProjectOffice', (accounts) => {
     });
     describe('minting', async () => {
         it('creates a new token', async () => {
-            const result = await projectOffice.placeNewOrder('Test', 1, 2, 4, 5)
+            const result = await projectOffice.placeNewOrder(1, 2, 4, 5)
             // const totalSupply = await projectOffice.totalSupply()
             //Success
             console.log(result);
             const event = result.logs[0].args
             console.log(event);
-            assert.equal(event.tokenId.toNumber(), 1, 'id is correct')
+            assert.equal(event.tokenId.toNumber(), 0, 'id is correct')
             assert.equal(event.from, '0x0000000000000000000000000000000000000000', 'from is correct')
             assert.equal(event.to, accounts[0], 'to is correct')
             //Failure

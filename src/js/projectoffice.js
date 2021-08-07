@@ -59,6 +59,11 @@ App = {
   
         // Use our contract to retrieve and mark the adopted pets
         // return App.markAdopted();
+        $("#Sha").hide();
+        $("#Con").hide();
+        $("#Do").hide();
+        $("#But").hide();
+        $("#Dis").hide();
       });
   
       return App.bindEvents();
@@ -66,8 +71,9 @@ App = {
   
     bindEvents: function() {
       $(document).on('click', '.btn-primary', App.submit);
+      $(document).on('click', '.btn-danger', App.get);
     },
-  
+    
     submit: function(event) {
       event.preventDefault();
   
@@ -126,7 +132,49 @@ App = {
           console.log(err.message);
         });
       });
+      
+    },
+
+    
+    get: function(event) {
+      event.preventDefault();
   
+    //   var petId = parseInt($(event.target).data('id'));
+      
+      var projectOfficeInstance;
+  
+      web3.eth.getAccounts(function(error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+  
+        var account = accounts[0];
+        
+        App.contracts.ProjectOffice.deployed().then(async function(instance) {
+            projectOfficeInstance = instance;
+            // console.log(projectOfficeInstance);
+            var orderID = $("#orderID").val();
+          // Execute adopt as a transaction by sending account
+            var data = await projectOfficeInstance.get(orderID, {from: account});
+            $("#Sha").show();
+            $("#Con").show();
+            $("#Do").show();
+            $("#But").show();
+            $("#Dis").show();
+            $("#amountSha").val(data[0].c[0]);
+            $("#amountCon").val(data[1].c[0]);
+            $("#amountDo").val(data[2].c[0]);
+            $("#amountBut").val(data[3].c[0]);
+            $("#amountDis").val(data[4].c[0]);
+            
+        }).then(function(result) {
+        //   return App.markAdopted();
+            console.log("Success");
+        }).catch(function() {
+          alert("This order doesn't exist or you aren't the owner.");
+        });
+      });
+      
     }
   
   };
