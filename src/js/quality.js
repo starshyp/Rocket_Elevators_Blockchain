@@ -68,6 +68,26 @@ App = {
     $(document).on('click', '.btn-primary', App.verify);
   },
 
+//////////////////////////////////TRANSACTION CALL///////////////////////////
+  // transaction: function() {
+  //   var qualityInstance;
+  //
+  //   App.contracts.Quality.deployed().then(function(instance) {
+  //     qualityInstance = instance;
+  //
+  //     return qualityInstance;
+  //   }).then(function(verifications) {
+  //     for (i = 0; i < verifications.length; i++) {
+  //       if (verifications[i] !== '0x0000000000000000000000000000000000000000') {
+  //         $('.verify-quality').eq(i).find('button').text('Success').attr('disabled', true);
+  //       }
+  //     }
+  //   }).catch(function(err) {
+  //     console.log(err.message);
+  //   });
+  // },
+  ////////////////////////////////////////////////////////////////////////////
+
 ////////////////////////////////////////////////////////////////////////////
   // function verify() {
   verify: function(event) {
@@ -89,6 +109,27 @@ App = {
 
         console.log(qualityInstance)
         address = qualityInstance.address.toString();
+
+        // var _grade = 'Pass';
+        // var door = true;
+        // var cable = true;
+        // var brake = true;
+        // var battery = 4;
+
+        var _grade = $("#grade").val()
+        console.log(_grade);
+        var door = $("#door").val()
+        console.log(door)
+        var cable = $("#cable").val()
+        console.log(cable)
+        var brake = $("#brake").val()
+        console.log(brake)
+        var battery = $("#battery").val()
+        console.log(battery)
+
+        var colCert = true; //true as in data exists
+        console.log(colCert)
+
         var data = {
           address: address,
           contract: "Quality"
@@ -116,31 +157,25 @@ App = {
         });
         // Execute adopt as a transaction by sending account
         // return qualityInstance.adopt(petId, {from: account});
-        return
+        return qualityInstance.verifyQuality(_grade, door, cable, brake, battery, colCert, {from: account});
         // qualityInstance.verifyQuality('Pass', true, true, true, 4, true, {from: account});
-        qualityInstance.verifyQuality(
-          $("grade").val(),
-          $("door").val(),
-          $("cable").val(),
-          $("brake").val(),
-          $("battery").val(),
-          true, //true as in data exists
-          {from: account}
-        );
+
+        //   $("grade").val(),
+        //   $("door").val(),
+        //   $("cable").val(),
+        //   $("brake").val(),
+        //   $("battery").val(),
+        //   true, //true as in data exists
+        //   {from: account}
+        // );
         // qualityInstance.door($("#door").val(), {from: account});
         // qualityInstance.cable($("#cable").val(), {from: account});
         // qualityInstance.brake($("#brake").val(), {from: account});
         // qualityInstance.batteryPermit($("#battery").val(), {from: account});
-        qualityInstance.certificate(
-          $("#cert1").val(),
-          $("#cert2").val(),
-          $("#cert3").val(),
-          $("#cert4").val(),
-          {from: account}
-        );
+        return qualityInstance.certificate($("#cert1").val(),$("#cert2").val(),$("#cert3").val(),$("#cert4").val(),{from: account});
 
       }).then(function(result) {
-        // return App.charge();
+        // return App.transaction();
       }).catch(function(err) {
       });
     });

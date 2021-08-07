@@ -1,9 +1,24 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
 
 contract Quality is ERC721 {
+  address public admin;
+
   constructor() ERC721("Quality", "QA") {
+    admin = msg.sender;
+  }
+
+  function publicFunction() external {}
+
+  function privateFunction() external onlyAdmin() {
+    require(msg.sender == admin, 'Authorized Personnel Only');
+  }
+
+  modifier onlyAdmin() {
+    require(msg.sender == admin, 'Authorized Personnel Only');
+    _;
   }
 
   struct Verify {
@@ -47,14 +62,6 @@ contract Quality is ERC721 {
     verifications.push(_grade);
   }
 
-  /* struct Checks {
-    bool doorCheck; //guarantee
-    bool cableCheck; //guarantee
-    bool brakeCheck; //guarantee
-    bool batteryCheck; //obtain permit
-    bool colCheck; //cert of conformity for each col.
-  } */
-
   struct Permit {
     uint battID; //random function
     string battIssued; //string
@@ -77,7 +84,7 @@ contract Quality is ERC721 {
     return brakeTest ? 'Pass' : 'Fail';
   }
 
-  function batteryPermit(uint numOfPermits) public /*public returns(Permit memory batteryShow)*/ {
+  function batteryPermit(uint numOfPermits) external onlyAdmin() /*public returns(Permit memory batteryShow)*/ {
     for(uint i=0; i<numOfPermits; i++) {
       Permit memory batteryPermitNew;
       batteryPermitNew.battID = random();
@@ -90,7 +97,7 @@ contract Quality is ERC721 {
     }
   }
 
-  function certificate(bool door, bool brake, bool cable, uint permit/*, Permit memory permit*/) public pure returns(string memory) {
+  function certificate(bool door, bool brake, bool cable, uint permit/*, Permit memory permit*/) public returns(string memory) {
     /* grade; */
     return door && brake && cable && (permit > 0) /*&& (permit > 0)*/ ? 'Pass' : 'Fail';
     /* return grade; */

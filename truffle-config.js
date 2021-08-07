@@ -1,7 +1,7 @@
 // ref: https://www.trufflesuite.com/guides/using-infura-custom-provider
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim();
 // const mnemonic = "";
 
 module.exports = {
@@ -25,9 +25,11 @@ module.exports = {
       },
       network_id: 3,
       // gas: 5500000,
-      // confirmation: 2,
-      // timeoutBlocks: 200,
-      // skipDryRun: true
+      confirmation: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      networkCheckTimeout: 1000000,
+      addressIndex: 2
     },
     development: {
       host: "127.0.0.1",
