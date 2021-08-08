@@ -7,12 +7,20 @@ Smart contracts were created to keep track of each step in the supply chain with
 ### How to use
 
 ```bash
+*create empty .secret file in root dir.
+*ensure Ganache is running
+
 truffle compile
 truffle migrate
 npm run dev
 
+To run tests:
+truffle test
+
 If necessary/issues:
+truffle compile
 truffle migrate --reset
+truffle migrate --network ropsten --reset --compile-none (must have your Metamask mnemonic in .secret file to re-deploy)
 ```
 
 ### Contract Addresses
